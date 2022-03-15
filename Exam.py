@@ -90,12 +90,14 @@ class Exam:
       print(f'{ques} = {ques.right_answer}')
 
 
-  def json_file(self,file_name='math_exam',path=None):
+  def json_file(self,file_name='math_exam',path=None,indent:int = 4 ):
     import json
+    #TODO open the file in the path 
+    Range.CheckInt(4)
     data = [   ques.__dict__   for ques in self.questions ]
     if not path :
       with open(f'{file_name}.json','w') as f:
-        json.dump(data,f,indent=4)
+        json.dump(data,f,indent=indent )
 
 if __name__ == "__main__":
   exam = Exam()

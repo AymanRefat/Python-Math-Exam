@@ -83,11 +83,11 @@ class Question:
     
 
   
-  def json(self):
+  def json(self,indent:int = 4 ):
     """this function will convert the question to json object"""
     import json
-    
-    return json.dumps(self.__dict__,indent=4)
+    Range.CheckInt(indent)
+    return json.dumps(self.__dict__,indent=indent)
 
   def __str__(self) -> str:
       return f'{self.question_text}' 
