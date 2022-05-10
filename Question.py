@@ -1,4 +1,4 @@
-from Math import  Math
+from operatores import Subtract , Add, Multible, Divide, BaseOperator
 from Range import  Range
 from random import randint
 
@@ -17,27 +17,17 @@ class Question:
   
   @classmethod
   def CheckOperator(cls,oper:str):  
-    
+  
     if not oper in cls.ALLOWED_OPERATORES:
       raise ValueError(f"Please Enter an Operator in the allowed List {cls.ALLOWED_OPERATORES}")
   
   
-  def WhichOperator(oper):
+  def WhichOperator(oper:BaseOperator):
     """this function will take an operator then will return a function that work for each operator for X Y  
     return None if not found 
     ####### todo I think we can make a more dinamic way to check which operator and make it daynamic to add any one 
     """
-    oper_class = Math
-    if oper == '+':
-      return oper_class.Sum
-    elif oper == '-':
-      return oper_class.Subtract
-    elif oper == '*':
-      return oper_class.Mul
-    elif oper == '/':
-      return oper_class.Divide
-    else : 
-      return None
+    return oper
   
   
   

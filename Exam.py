@@ -32,11 +32,8 @@ class Exam:
       """return requerments as tuple  
       changes from each exam
       """
-      
       start1 , end1 = 2 ,10 
-      start2,end2 = 2 , 10 
-      
-      
+      start2,end2 = 2 , 10
       
       if self.level ==2 :
         end1 = end1**2
